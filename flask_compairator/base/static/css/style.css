@@ -6,12 +6,16 @@
     --cernlightblue: #4D94CCFF;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
     width: 100%;
-    /*margin: auto;*/
-    /*display: flex;*/
-    /*min-height: 100vh;*/
-    /*flex-direction: column;*/
+    flex-grow: 1;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
     font-family: "Rubik", sans-serif;
 }
 
@@ -42,6 +46,11 @@ figcaption {
 }
 
 .w3-container {
+    flex-grow: 1;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+
     text-align: justify;
     border-left: solid 2px dimgray;
     border-right: solid 2px dimgray;
@@ -50,3 +59,7 @@ figcaption {
     margin-left: var(--content-padding);
     margin-right: var(--content-padding);
 }
+
+/*.pushbutton {*/
+/*    w3-button w3-amber w3-ripple w3-mobile w3-large*/
+/*}*/
