@@ -1,0 +1,52 @@
+/*@import "w3.css";*/
+
+:root {
+    --cernblue: #0033A0;
+    --content-padding: 2.5%;
+    --cernlightblue: #4D94CCFF;
+}
+
+body {
+    width: 100%;
+    /*margin: auto;*/
+    /*display: flex;*/
+    /*min-height: 100vh;*/
+    /*flex-direction: column;*/
+    font-family: "Rubik", sans-serif;
+}
+
+nav {
+    margin: 0 !important;
+    border-top: solid 1px dimgray;
+    border-bottom: solid 1px dimgray;
+}
+
+hr {
+    opacity: 0.7;
+    border-width: 4px;
+    border-color: olivedrab;
+}
+
+figcaption {
+    width: 70%;
+    margin: auto;
+    display: block;
+    font-weight: bold;
+    padding-top: 20px;
+    font-style: italic;
+}
+
+.w3-display-container {
+    height: 200px;
+    background: #cddc39;
+}
+
+.w3-container {
+    text-align: justify;
+    border-left: solid 2px dimgray;
+    border-right: solid 2px dimgray;
+
+    padding: var(--content-padding);
+    margin-left: var(--content-padding);
+    margin-right: var(--content-padding);
+}
