@@ -1,21 +1,40 @@
-"""App config."""
-from os import environ
+import os
 
 
-class Config:
-    """Global configuration variables."""
+class Config(object):
+    SECRET_KEY = 'key'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    ADMIN = {'username': 'admin',
+             'email': 'admin',
+             'password': 'admin'}
 
-    # General Config
-    SECRET_KEY = environ.get('SECRET_KEY')
-    FLASK_APP = environ.get('FLASK_APP')
-    FLASK_ENV = environ.get('FLASK_ENV')
+    # THEME SUPPORT
+    #  if set then url_for('static', filename='', theme='')
+    #  will add the theme name to the static URL:
+    #    /static/<DEFAULT_THEME>/filename
+    # DEFAULT_THEME = "themes/dark"
+    DEFAULT_THEME = None
 
-    # Assets
-    LESS_BIN = environ.get('LESS_BIN')
-    ASSETS_DEBUG = environ.get('ASSETS_DEBUG')
-    LESS_RUN_IN_DEBUG = environ.get('LESS_RUN_IN_DEBUG')
 
-    # Static Assets
-    STATIC_FOLDER = environ.get('STATIC_FOLDER')
-    TEMPLATES_FOLDER = environ.get('TEMPLATES_FOLDER')
-    COMPRESSOR_DEBUG = environ.get('COMPRESSOR_DEBUG')
+class ProductionConfig(Config):
+    DEBUG = False
+
+    # PostgreSQL database
+    SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
+        os.environ.get('GENTELELLA_DATABASE_USER', 'gentelella'),
+        os.environ.get('GENTELELLA_DATABASE_PASSWORD', 'gentelella'),
+        os.environ.get('GENTELELLA_DATABASE_HOST', 'db'),
+        os.environ.get('GENTELELLA_DATABASE_PORT', 5432),
+        os.environ.get('GENTELELLA_DATABASE_NAME', 'gentelella')
+    )
+
+
+class DebugConfig(Config):
+    DEBUG = True
+
+
+config_dict = {
+    'Production': None,
+    'Debug': DebugConfig
+}

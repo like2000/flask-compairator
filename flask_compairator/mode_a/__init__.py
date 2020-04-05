@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-name = 'module_a'
+name = 'mode_a'
 
 blueprint = Blueprint(
     name + '_blueprint',
