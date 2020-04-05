@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-name = 'game_a'
+name = 'part_a'
 
 blueprint = Blueprint(
     name + '_blueprint',
