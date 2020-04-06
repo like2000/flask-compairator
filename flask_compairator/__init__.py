@@ -7,6 +7,10 @@ from flask import url_for
 from config import config_dict
 
 
+def register_extensions(server: Flask):
+    ...
+
+
 def register_blueprints(server: Flask):
     for module_name in ('base', 'data', 'mode_a', 'part_a'):
         module = import_module(f'flask_compairator.{module_name}.routes')
