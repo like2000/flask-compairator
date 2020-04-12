@@ -2,8 +2,19 @@
 {{ super() }}
 
 {% block stylesheets %}
+    {{ super() }}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="">
+    <script type="text/javascript">$(function () {
+        $('a#test').bind('click', function () {
+            $.getJSON('python_process',
+                function (data) {
+                    //do nothing
+                    alert("Whow there hoersey!")
+                });
+            return false;
+        });
+    });
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -35,12 +46,11 @@
         <div class='container'>
             <h3>Test</h3>
             <form>
-                <a href=# id=test>
+                <a href=/base/home id=test>
                     <button class='btn btn-default'>Test</button>
                 </a>
             </form>
         </div>
-    </div>
     </div>
 
     <p></p>
