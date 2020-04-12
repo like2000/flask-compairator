@@ -27,13 +27,17 @@
     <p>Now let's play a little game...</p>
 
     <div class="w3-bar w3-center">
-        <div class="w3-button w3-amber w3-ripple w3-mobile w3-large w3-round" style="width: 20%"><i
-                class="fas fa-cat"></i>
-        </div>
+        <form action="python_process" method="post">
+            <button class="w3-button w3-amber w3-ripple w3-mobile w3-large w3-round" type="submit" style="width: 20%"><i
+                    class="fas fa-cat"></i>
+            </button>
+        </form>
 
-        <div class="w3-button w3-amber w3-ripple w3-mobile w3-large w3-round" style="width: 20%"><i
-                class="fas fa-dragon"></i>
-        </div>
+        <form action="python_process" method="post">
+            <div class="w3-button w3-amber w3-ripple w3-mobile w3-large w3-round" style="width: 20%"><i
+                    class="fas fa-dragon"></i>
+            </div>
+        </form>
 
         <div class="w3-button w3-amber w3-ripple w3-mobile w3-large w3-round" style="width: 20%"><i
                 class="fas fa-dove"></i>
@@ -43,19 +47,14 @@
                 class="fas fa-spider"></i>
         </div>
 
-        <br><br>
-
-        <div class='container'>
-            <h3>Pick a new number:</h3>
-            {#            <form>#}
-            {#                <a href=/base/home id=test>#}
-            {#                    <button class='btn btn-default'>Test</button>#}
-            {#                </a>#}
-            {#            </form>#}
-            <form action="python_process" method="post">
-                <button class="w3-button w3-red w3-round-medium" type="submit">New number</button>
-            </form>
-        </div>
+        {#        <div class='container'>#}
+        {#            <h3>Pick a new number:</h3>#}
+        {#            <form>#}
+        {#                <a href=/base/home id=test>#}
+        {#                    <button class='btn btn-default'>Test</button>#}
+        {#                </a>#}
+        {#            </form>#}
+        {#        </div>#}
     </div>
 
     <p></p>
