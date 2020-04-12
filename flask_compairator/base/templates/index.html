@@ -43,25 +43,26 @@
                 class="fas fa-spider"></i>
         </div>
 
+        <br><br>
+
         <div class='container'>
-            <h3>Test</h3>
-            <form>
-                <a href=/base/home id=test>
-                    <button class='btn btn-default'>Test</button>
-                </a>
+            <h3>Pick a new number:</h3>
+            {#            <form>#}
+            {#                <a href=/base/home id=test>#}
+            {#                    <button class='btn btn-default'>Test</button>#}
+            {#                </a>#}
+            {#            </form>#}
+            <form action="python_process" method="post">
+                <button class="w3-button w3-red w3-round-medium" type="submit">New number</button>
             </form>
         </div>
     </div>
 
     <p></p>
 
-    <div class="w3-bar w3-blue-gray">
-        <a class="w3-bar-item w3-button w3-padding-24">
-
-        </a>
-        <a class="w3-bar-item w3-button w3-padding-24">
-
-        </a>
+    <div class="w3-panel w3-round-medium w3-green w3-center w3-padding-24">
+        <span class="w3-xxxlarge">{{ label }}</span>
     </div>
+
 
 {% endblock %}
