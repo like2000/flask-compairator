@@ -21,8 +21,6 @@ def python_process():
     if request.method == 'POST':
         rnum = np.random.randint(1, 5, 1)[0]
         for key, name in request.form.items():
-            print(key, name, animals.get(name), rnum, tries)
-
             if animals.get(name) == rnum:
                 tries = 0
                 text = f"Yes! You found your {name}!"
@@ -30,7 +28,7 @@ def python_process():
             else:
                 tries = tries + 1
                 if tries > 3:
-                    return redirect(url_for('home'))
+                    return redirect(url_for('home_blueprint.over'))
                 else:
                     text = f"No - {name} not found... try again!"
                     return render_template("index.html", label=text, color="w3-red")
