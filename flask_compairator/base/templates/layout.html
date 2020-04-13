@@ -16,7 +16,9 @@
 
 <header>
     {% with title="This is my title" %}
-        {% include "hero.html" %}
+        {% with image_name="matchmaker-digi.jpg" %}
+            {% include "hero.html" %}
+        {% endwith %}
     {% endwith %}
 </header>
 
