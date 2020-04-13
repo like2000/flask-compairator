@@ -28,6 +28,7 @@ def python_process():
             else:
                 tries = tries + 1
                 if tries > 3:
+                    tries = 0
                     return redirect(url_for('home_blueprint.over'))
                 else:
                     text = f"No - {name} not found... try again!"

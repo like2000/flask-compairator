@@ -3,6 +3,20 @@
 
 {% block stylesheets %}
     {{ super() }}
+
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            sessionStorage.scrollTop = $(this).scrollTop();
+        });
+
+        $(document).ready(function () {
+            if (sessionStorage.scrollTop != "undefined") {
+                $(window).scrollTop(sessionStorage.scrollTop);
+            }
+        });
+    </script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">$(function () {
         $('a#test').bind('click', function () {
@@ -59,6 +73,20 @@
 
     <div class="w3-panel w3-round-medium w3-center w3-padding-24 {{ color }}">
         <span class="w3-xxlarge">{{ label }}</span>
+    </div>
+
+    <br><br>
+
+    <!-- The parent component -->
+    <div class="stage">
+        <div class="stage-content"></div>
+        <label class="curtain-container">
+            <div class="curtain-panel">
+                <input type="checkbox" class="curtain-trigger"/>
+                <div class="left-curtain curtain" data-title="Click to reveal a special reward..."></div>
+                <div class="right-curtain curtain" data-title="Click to reveal a special reward..."></div>
+            </div>
+        </label>
     </div>
 
 
