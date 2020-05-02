@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html ng-app="WordcountApp">
+<body ng-controller="WordcountController">
+<form role="form" ng-submit="getResults()">
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="{{ url_for('react_blueprint.static', filename='test.js') }}"></script>
+    <h1>Angular test</h1>
+
+    <input type="text" ng-model="url" name="url" class="form-control" id="url-box" placeholder="Enter URL..."
+           style="max-width: 300px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <h1>Wordcount 3000</h1>
+                <br>
+                <form role="form" ng-submit="getResults()">
+                    <div class="form-group">
+                        <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter URL..."
+                               style="max-width: 300px;" ng-model="url" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <h2>Frequencies</h2>
+                <br>
+                {% raw %}
+                <div id="results">
+                    {{wordcounts}}
+                </div>
+                {% endraw %}
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
